@@ -23,7 +23,7 @@ ${PROJECT_SOURCE_DIR}/python/fmm.i PROPERTIES CPLUSPLUS ON)
 
 if (${CMAKE_VERSION} VERSION_LESS 3.13.0)
   message(STATUS "Using swig add module")
-  SWIG_ADD_MODULE(fmm python ${PROJECT_SOURCE_DIR}/python/fmm.i)
+  SWIG_ADD_LIBRARY(fmm python ${PROJECT_SOURCE_DIR}/python/fmm.i)
   swig_link_libraries(fmm FMMLIB ${Python_LIBRARY})
   install(TARGETS ${SWIG_MODULE_fmm_REAL_NAME} DESTINATION ${Python_SITELIB})
 else()
